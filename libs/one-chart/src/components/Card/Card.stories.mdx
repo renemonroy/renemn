@@ -1,0 +1,134 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs";
+import ContentLoader from "react-content-loader";
+import { ChartsProvider } from "../../stores/ChartsStore/ChartsStore.tsx";
+import ChartPlaceholder from "../ChartPlaceholder/ChartPlaceholder";
+import Text from "../Text/Text";
+import Legends from "../Legends/Legends";
+import Card from "./Card";
+
+<Meta
+  title="Components/Card"
+  component={Card}
+  decorators={[
+    (storyFn) => (
+      <ChartsProvider>
+        <div style={{ width: "736px" }}>{storyFn()}</div>
+      </ChartsProvider>
+    ),
+  ]}
+/>
+
+# Card
+
+## Examples
+
+<Preview>
+  <Story name="withTitle">
+    <Card isLoading={false}>
+      <Card.Header title="Card with Title" />
+    </Card>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="withSubtitle">
+    <Card isLoading={false}>
+      <Card.Header
+        title="Card with Title"
+        subtitle="A long description goes in this part"
+      />
+    </Card>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="withPlaceholder">
+    <Card isLoading={true}>
+      <Card.Header
+        title="Card with Title"
+        subtitle="A long description goes in this part"
+      >
+        <Legends
+          legendsData={[
+            { color: "supportive500", label: "Avg Legend 1", shape: "line" },
+            { color: "primary500", label: "Avg Legend 2", shape: "dot" },
+          ]}
+        />
+      </Card.Header>
+      <Card.Placeholder>
+        {(phDimensions) => (
+          <ChartPlaceholder
+            dimensions={phDimensions}
+            hasBars={true}
+            hasLegends={true}
+            hasTitle={true}
+            hasSubtitle={true}
+          />
+        )}
+      </Card.Placeholder>
+    </Card>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="withLegends">
+    <Card isLoading={false}>
+      <Card.Header
+        title="Card with Title"
+        subtitle="A long description goes in this part"
+      >
+        <Legends
+          legendsData={[
+            { color: "supportive500", label: "Avg Legend 1", shape: "line" },
+            { color: "primary500", label: "Avg Legend 2", shape: "dot" },
+          ]}
+        />
+      </Card.Header>
+    </Card>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="withContent">
+    <Card isLoading={false}>
+      <Card.Header
+        title="Card with Title"
+        subtitle="A long description goes in this part"
+      />
+      <Card.Content>
+        <Text tag="body2">Here goes a graph.</Text>
+      </Card.Content>
+    </Card>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="withoutHeader">
+    <Card isLoading={false}>
+      <Card.Content>
+        <Text tag="body2">Here goes a graph.</Text>
+      </Card.Content>
+    </Card>
+  </Story>
+</Preview>
+
+<Preview>
+  <Story name="withAllSections">
+    <Card isLoading={false}>
+      <Card.Header
+        title="Card with Title"
+        subtitle="A long description goes in this part"
+      >
+        <Legends
+          legendsData={[
+            { color: "supportive500", label: "Avg Legend 1", shape: "line" },
+            { color: "primary500", label: "Avg Legend 2", shape: "dot" },
+          ]}
+        />
+      </Card.Header>
+      <Card.Content>
+        <Text tag="body2">Here goes a graph.</Text>
+      </Card.Content>
+    </Card>
+  </Story>
+</Preview>

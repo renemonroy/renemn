@@ -1,0 +1,137 @@
+import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs";
+// import { ChartsProvider } from "../../stores/ChartsStore/ChartsStore.tsx";
+import OneChart from "./OneChart";
+import { ChartsProvider } from "../stores/ChartsStore/ChartsStore.tsx";
+import leftRightAxisSchema from "../examples/LeftRightAxis/LeftRightAxis.schema.ts";
+import leftRightAxisData from "../examples/LeftRightAxis/LeftRightAxis.mockup.json";
+import verticalBarsSchema from "../examples/VerticalBars/VerticalBars.schema.ts";
+import verticalBarslineData from "../examples/VerticalBars/VerticalBars.mockup.json";
+import minMaxRangeSchema from "../examples/MinMaxRange/MinMaxRange.schema.ts";
+import minMaxRangeData from "../examples/MinMaxRange/MinMaxRange.mockup.json";
+import quarterSchema from "../examples/Quarter/Quarter.schema.ts";
+import quarterMockup from "../examples/Quarter/Quarter.mockup.json";
+import linesSchema from "../examples/Lines/Lines.schema.ts";
+import linesData from "../examples/Lines/Lines.mockup.json";
+import dotsSchema from "../examples/Dots/Dots.schema.ts";
+import dotsData from "../examples/Dots/Dots.mockup.json";
+import bubblesSchema from "../examples/Bubbles/Bubbles.schema.ts";
+import bubblesData from "../examples/Bubbles/Bubbles.mockup.json";
+
+<Meta
+  title="OneChart"
+  decorators={[
+    (storyFn) => (
+      <ChartsProvider theme={{ def: { borderRadius: "1rem" } }}>
+        <div style={{ height: "355px" }}>{storyFn()}</div>
+      </ChartsProvider>
+    ),
+  ]}
+  argTypes={{
+    schema: {
+      name: "Schema",
+      description:
+        "Helps the component to interpret how you want to render the data.",
+    },
+  }}
+/>
+
+# 1Chart
+
+## Description
+
+<ArgsTable of={OneChart} />
+
+## Examples
+
+export const Template = (args) => <OneChart {...args} />;
+
+<Canvas>
+  <Story
+    name="withVerticalBars"
+    args={{
+      schema: verticalBarsSchema,
+      data: verticalBarslineData,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="withDots"
+    args={{
+      schema: dotsSchema,
+      data: dotsData,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="withLines"
+    args={{
+      schema: linesSchema,
+      data: linesData,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="withBubbles"
+    args={{
+      schema: bubblesSchema,
+      data: bubblesData,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="withLeftRightAxis"
+    args={{
+      schema: leftRightAxisSchema,
+      data: leftRightAxisData,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="withQuarter"
+    args={{
+      schema: quarterSchema,
+      data: quarterMockup,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story
+    name="withMinMaxRange"
+    args={{
+      schema: minMaxRangeSchema,
+      data: minMaxRangeData,
+      isLoading: false,
+    }}
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>

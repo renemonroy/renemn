@@ -1,0 +1,25 @@
+import { Meta, Story, Preview } from "@storybook/addon-docs";
+import { ChartsProvider } from "../../stores/ChartsStore/ChartsStore";
+import Legends from "./Legends";
+
+<Meta
+  title="Components/Legends"
+  component={Legends}
+  decorators={[(storyFn) => <ChartsProvider>{storyFn()}</ChartsProvider>]}
+/>
+
+# Legends
+
+## Examples
+
+<Preview>
+  <Story name="withLegendsData">
+    <Legends
+      legendsData={[
+        { color: "supportive500", label: "Avg Legend 1", shape: "line" },
+        { label: "Avg Legend 2", shape: "dot" },
+        { color: "secondary500", label: "Avg Legend 3", shape: "line" },
+      ]}
+    />
+  </Story>
+</Preview>
