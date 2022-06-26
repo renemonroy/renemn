@@ -2,3 +2,7 @@
 
 /dist
 /coverage
+
+/apps/rene.mn/node_modules
+/apps/rene.mn/public
+/apps/rene.mn/.cache

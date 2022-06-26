@@ -13,9 +13,10 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "nx/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "OTI0NTI5MjQtZDliYy00Mjc0LTgyZDQtNzZiZWMzMWE2ODU0fHJlYWQtd3JpdGU="
       }
     }
   },
@@ -25,7 +26,23 @@
     }
   },
   "workspaceLayout": {
-    "appsDir": "packages",
-    "libsDir": "packages"
-  }
+    "appsDir": "apps",
+    "libsDir": "libs"
+  },
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/gatsby": {
+      "application": {
+        "style": "styled-components"
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/gatsby"
+  },
+  "defaultProject": "rene.mn"
 }

@@ -1,5 +1,11 @@
 {
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
-  "projects": {}
+  "projects": {
+    "one-chart": "libs/one-chart",
+    "rene.mn": "apps/rene.mn",
+    "rene.mn-e2e": "apps/rene.mn-e2e",
+    "use-debounced-callback": "libs/use-debounced-callback",
+    "use-resize-observer": "libs/use-resize-observer"
+  }
 }

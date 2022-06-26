@@ -14,7 +14,13 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@renemn/one-chart": ["libs/one-chart/src/index.ts"],
+      "@renemn/use-debounced-callback": [
+        "libs/use-debounced-callback/src/index.ts"
+      ],
+      "@renemn/use-resize-observer": ["libs/use-resize-observer/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
