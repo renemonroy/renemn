@@ -1,0 +1,26 @@
+@tailwind base;
+
+body {
+  @apply font-open-sans leading-normal text-sm;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  @apply font-raleway;
+}
+
+h2 {
+  @apply text-4xl font-normal mb-4;
+}
+
+h4 {
+  @apply text-base font-semibold pt-1 mb-2;
+}
+
+p {
+  @apply mb-5;
+}
+
+@tailwind utilities;
