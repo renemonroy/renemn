@@ -14,11 +14,34 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["open sans:200, 300, 400, 600", "raleway:200, 300, 400, 600"],
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `labs`,
+        path: `${__dirname}/src/labs`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        tailwind: true,
+        printRejected: true,
+        purgeOnly: [`src/styles/globals.css`],
+        develop: true, // Enable while using `gatsby develop`
       },
     },
     `gatsby-plugin-image`,
