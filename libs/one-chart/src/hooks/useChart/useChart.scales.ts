@@ -6,8 +6,6 @@ import {
   scaleBand,
   ScaleLinear,
   scaleLinear,
-  scalePoint,
-  ScalePoint,
   ScaleTime,
   scaleTime,
 } from "d3";
@@ -18,6 +16,7 @@ export default {
    * Scale type Band
    * -----------------------------------------------------------------------
    */
+  // eslint-disable-next-line
   ["band"](
     { value, domain, range, size }: IScaleConfig,
     dimensions: TDimensions,
@@ -33,6 +32,7 @@ export default {
    * Scale type Linear
    * -----------------------------------------------------------------------
    */
+  // eslint-disable-next-line
   ["linear"](
     { value, domain, range, orientation = "vertical" }: IScaleConfig,
     dimensions: TDimensions,
@@ -56,6 +56,7 @@ export default {
    * getScaleTime
    * -----------------------------------------------------------------------
    */
+  // eslint-disable-next-line
   ["time"](
     { domain, range, size, value }: IScaleConfig,
     dimensions: TDimensions,

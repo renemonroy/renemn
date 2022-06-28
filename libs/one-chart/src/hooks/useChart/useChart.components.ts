@@ -41,6 +41,7 @@ export default {
    * @description Element that rendered at the bottom of the charts with
    * the purpose to serve as guideline on the `x` axis.
    */
+  // eslint-disable-next-line
   ["bottom-axis"](
     { format, ticks, value }: IAxisComponent,
     { internalDimensions, scales, schema, svg }: IChart,
@@ -72,6 +73,7 @@ export default {
    * @description Element that rendered at the left of the charts with
    * the purpose to serve as guideline on a `y` axis.
    */
+  // eslint-disable-next-line
   ["left-axis"](
     { format, ticks, value }: IAxisComponent,
     { internalDimensions, scales, schema, svg }: IChart,
@@ -96,6 +98,7 @@ export default {
    * @description Element that rendered at the right of the charts with
    * the purpose to serve as guideline on a `y` axis as well.
    */
+  // eslint-disable-next-line
   ["right-axis"](
     { format, ticks, value }: IAxisComponent,
     { dimensions, internalDimensions, scales, schema, svg }: IChart,
@@ -123,6 +126,7 @@ export default {
    * @description Element that renders vertical lines normally placed
    * behind charts.
    */
+  // eslint-disable-next-line
   ["background-lines"](
     { value }: IBackgroundLinesComponent,
     { internalDimensions, scales, schema, svg }: IChart,
@@ -161,6 +165,7 @@ export default {
    * -----------------------------------------------------------------------
    * @description Element that renders vertical bars.
    */
+  // eslint-disable-next-line
   ["vertical-bars"](
     {
       barWidth,
@@ -257,6 +262,7 @@ export default {
    * -----------------------------------------------------------------------
    * @description Element that renders a chart of type line.
    */
+  // eslint-disable-next-line
   ["line"](
     { disabledColor, enabledColor, hoveredColor, value }: ILineComponent,
     { internalDimensions, scales, schema, svg, theme }: IChart,
@@ -302,6 +308,7 @@ export default {
    * Dots component
    * -----------------------------------------------------------------------
    */
+  // eslint-disable-next-line
   ["dots"](
     {
       disabledColor,
@@ -416,6 +423,7 @@ export default {
    * Bubbles component
    * -----------------------------------------------------------------------
    */
+  // eslint-disable-next-line
   ["bubbles"](
     {
       disabledColor,
