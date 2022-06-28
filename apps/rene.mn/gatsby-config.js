@@ -18,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ["open sans:200, 300, 400, 600", "raleway:200, 300, 400, 600"],
+        fonts: ["raleway:200, 300, 400, 600", "neuton:200, 300, 400, 600"],
       },
     },
     {

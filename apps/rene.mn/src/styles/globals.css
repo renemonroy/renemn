@@ -1,26 +1,29 @@
 @tailwind base;
 
 body {
-  @apply font-open-sans leading-normal text-sm;
+  @apply leading-normal text-base;
+  font-family: BlinkMacSystemFont, Inter, Segoe UI, Helvetica Neue, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-h1,
-h2,
-h3 {
-  @apply font-raleway;
+h1 {
+  @apply font-neuton font-light text-6xl mb-6;
 }
 
 h2 {
-  @apply text-4xl font-normal mb-4;
+  @apply font-neuton font-normal mb-4;
+}
+
+h3 {
+  @apply font-neuton mb-2;
 }
 
 h4 {
-  @apply text-base font-semibold pt-1 mb-2;
+  @apply font-neuton text-base font-semibold pt-1 mb-2;
 }
 
 p {
   @apply mb-5;
 }
 
-@tailwind utilities;
+/* @tailwind utilities; */
