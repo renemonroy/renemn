@@ -15,7 +15,7 @@ export default function LabTemplate({ data: { mdx } }) {
           <ModifiedTime>
             {mdx.parent.modifiedTime} • {mdx.timeToRead} min read
           </ModifiedTime>
-          <h2>{mdx.frontmatter.title}</h2>
+          <h1>{mdx.frontmatter.title}</h1>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </Article>
       </Main>
