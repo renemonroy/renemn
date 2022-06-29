@@ -2,9 +2,8 @@ import { format } from "d3";
 
 export default {
   id: "bubbles",
-  title: "Bubbles",
-  subtitle:
-    "Relationship between life expectancy, GDP (PPP) and population for multiple countries",
+  title: "Life Expectancy",
+  subtitle: "Relationship between GDP (PPP) and population in countries.",
   values: {
     lifeExp: {
       scale: "linear",
@@ -44,9 +43,6 @@ export default {
     {
       type: "bubbles",
       value: ["gdpPerCap", "lifeExp", "pop"],
-      strokeEnabledOpacity: 1,
-      strokeEnabledColor: "primary600",
-      strokeWidth: 1,
       legend: "Population",
     },
   ],
