@@ -25,6 +25,7 @@ export const SDotLegendStyles = css`
 `;
 
 export const SDotLegendShape = styled.span`
+  margin-top: 1px;
   height: calc(var(--border-radius) / 2);
   width: calc(var(--border-radius) / 2);
   ${SDotLegendStyles}

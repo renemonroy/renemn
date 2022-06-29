@@ -118,6 +118,7 @@ export type TTextTag =
 export interface IDef {
   backgroundColor?: TColor;
   borderRadius?: TBorderRadius;
+  borderColor?: TColor;
   bulletColor?: TColor;
   font?: TFont;
   fontWeight?: number;

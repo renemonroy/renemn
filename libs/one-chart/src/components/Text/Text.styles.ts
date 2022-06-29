@@ -21,7 +21,7 @@ const TextStyles = css`
   ${space}
 
   ${SCardContent} & {
-    color: var(--graph-card-content-color);
+    color: var(--och-card-content-color);
   }
 `;
 
@@ -59,7 +59,7 @@ export const H4 = styled.h4`
   ${TextStyles}
 
   ${SCardHeader} & {
-    color: var(--title-color);
+    color: var(--och-title-color);
   }
 `;
 
@@ -81,7 +81,7 @@ export const Subtitle2 = styled.span`
   ${TextStyles}
 
   ${SCardHeader} & {
-    color: var(--subtitle-color);
+    color: var(--och-subtitle-color);
     margin-top: 0.125rem;
   }
 `;
@@ -120,7 +120,9 @@ export const Caption2 = styled.span`
   ${TextStyles}
 
   ${SCardHeader} & {
-    color: var(--graph-card-content-color);
+    color: var(--och-card-content-color);
     padding: 0.125rem 0;
+    display: flex;
+    align-items: center;
   }
 `;

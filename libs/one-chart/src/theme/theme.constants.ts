@@ -4,12 +4,12 @@ export const BORDER_RADIUS = {
 };
 
 export const COLORS = {
-  primary900: "#0D47A1",
-  primary800: "#1565C0",
-  primary700: "#1976D2",
-  primary600: "#1E88E5",
-  primary500: "#2196F3",
-  primary400: "#42A5F5",
+  primary900: "#0d47a1",
+  primary800: "#1565c0",
+  primary700: "#1976d2",
+  primary600: "#1e88e5",
+  primary500: "#2196f3",
+  primary400: "#42a5f5",
   primary300: "#64b5f6",
   primary200: "#90caf9",
   primary100: "#bbdefb",
@@ -83,5 +83,5 @@ export const SPACE = [
   "1.875rem", // 30px
 ];
 
-export const GRAPH_STROKE_OPACITY = 0.32;
-export const GRAPH_STROKE_WIDTH = 10;
+export const GRAPH_STROKE_OPACITY = 1;
+export const GRAPH_STROKE_WIDTH = 1;

@@ -491,7 +491,7 @@ export default {
         "--component-stroke-hovered-color",
         strokeHoveredColor
           ? theme.__COLORS[strokeHoveredColor]
-          : theme.chart.strokeEnabledColor,
+          : theme.chart.strokeHoveredColor,
       )
       .style(
         "--component-stroke-enabled-opacity",

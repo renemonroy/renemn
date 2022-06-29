@@ -38,9 +38,10 @@ function Header(props: ICardHeaderProps) {
   const [{ theme }] = useChartsStore();
   const { isLoading } = useContext(CardContext);
   const titleStyle = {
-    "--title-color": theme.card.h4Color,
-    "--subtitle-color": theme.card.subtitle2Color,
-    "--graph-card-content-color": theme.card.textColor,
+    "--och-title-color": theme.card.h4Color,
+    "--och-subtitle-color": theme.card.subtitle2Color,
+    "--och-card-content-color": theme.card.textColor,
+    "--och-header-border-color": theme.card.borderColor,
   } as React.CSSProperties;
   return !isLoading ? (
     <SCardHeader style={titleStyle}>
@@ -62,7 +63,7 @@ function Content(props: ICardContentProps, ref?: React.Ref<HTMLDivElement>) {
   const [{ theme }] = useChartsStore();
   const { isLoading } = useContext(CardContext);
   const contentStyle = {
-    "--graph-card-content-color": theme.card.textColor,
+    "--och-card-content-color": theme.card.textColor,
   } as React.CSSProperties;
   return !isLoading ? (
     <SCardContent ref={ref} style={contentStyle}>
@@ -101,7 +102,8 @@ function Card(props: ICardProps): JSX.Element {
   const [{ theme }] = useChartsStore();
   const value = useMemo(() => ({ ...rest }), [props.children, props.isLoading]); // eslint-disable-line
   const cardStyle = {
-    "--bg-color": theme.card.backgroundColor,
+    "--card-bg-color": theme.card.backgroundColor,
+    "--och-card-border-color": theme.card.borderColor,
   } as React.CSSProperties;
   return (
     <CardContext.Provider value={value}>

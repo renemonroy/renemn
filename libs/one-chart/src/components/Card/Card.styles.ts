@@ -12,14 +12,15 @@ const sharedStyles = css`
  */
 
 export const SCard = styled.div`
-  background-color: var(--bg-color);
+  background-color: var(--och-card-bg-color);
+  border: 1px solid var(--och-card-border-color);
   border-radius: ${({ theme }) => theme.def.borderRadius};
   flex-direction: column;
   height: 100%;
   ${sharedStyles}
 
   & > *:first-child {
-    padding-top: 1.5rem;
+    padding-top: 1rem;
   }
 `;
 
@@ -29,19 +30,17 @@ export const SCard = styled.div`
  */
 
 export const SCardHeader = styled.header`
+  border-bottom: 1px solid var(--och-header-border-color);
   flex-direction: row;
   justify-content: space-between;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0 1.5rem 1rem;
   ${sharedStyles}
-
-  & > * {
-    flex: 1;
-  }
 `;
 
 export const SCardHeaderLeftSide = styled.div`
   display: flex;
   flex-direction: column;
+  padding-right: 2rem;
 `;
 
 export const SCardHeaderRightSide = styled.div`
@@ -59,7 +58,7 @@ export const SCardContent = styled.div`
   align-items: center;
   flex: 1;
   flex-direction: column;
-  padding: 0 1.5rem 1.5rem;
+  padding: 1.5rem;
   ${sharedStyles}
 `;
 
