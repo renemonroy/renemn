@@ -18,7 +18,7 @@ export const SLegends = styled.div`
 
 export const SDotLegendStyles = css`
   --border-radius: ${({ theme }) => theme.legends.borderRadius};
-  background-color: var(--shape-color);
+  background-color: var(--och-shape-color);
   border-radius: var(--border-radius);
   display: inline-block;
   margin-right: 0.5rem;

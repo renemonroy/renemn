@@ -13,7 +13,7 @@ function LegendShape(props: ILegendShapeProps) {
   const { shapeType, shapeColor } = props;
   const [{ theme }] = useChartsStore();
   const shapeStyle = {
-    "--shape-color": COLORS[shapeColor] || theme.def.bulletColor,
+    "--och-shape-color": COLORS[shapeColor] || theme.def.bulletColor,
   } as React.CSSProperties;
   switch (shapeType) {
     case "line":
