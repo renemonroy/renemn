@@ -264,23 +264,39 @@ export default {
    */
   // eslint-disable-next-line
   ["line"](
-    { disabledColor, enabledColor, hoveredColor, value }: ILineComponent,
+    {
+      disabledColor,
+      enabledColor,
+      hoveredColor,
+      value,
+      filter,
+      position = "left",
+    }: ILineComponent,
     { internalDimensions, scales, schema, svg, theme }: IChart,
     data: TData,
   ) {
+    const _data = !filter ? data : data.filter(filter);
     const scaleX = scales[value[0]] as any;
     const scaleY = scales[value[1]] as any;
     const xGap = schema.xAxisGap || X_AXIS_SPACE;
     const isScaleTime = schema.values[`${value[0]}`].scale === "time";
-    const width = isScaleTime ? 0 : internalDimensions.width / data.length / 2;
+    const colWidth = isScaleTime
+      ? 0
+      : position === "left"
+      ? 0
+      : internalDimensions.width /
+        _data.length /
+        (position === "right" ? 1 : 2);
+
     const drawLine: any = line(
       (d: any) =>
         internalDimensions.left +
         xGap +
-        width +
+        colWidth +
         scaleX(isScaleTime ? new Date(d[value[0]]) : d[value[0]]),
       (d: any) => scaleY(d[value[1]]),
     );
+
     const $component = svg
       .append("g")
       .attr("class", CHART_LINE)
@@ -299,7 +315,7 @@ export default {
           : theme.chart.valueDisabled,
       )
       .append("path")
-      .attr("d", drawLine(data))
+      .attr("d", drawLine(_data))
       .attr("class", COMPONENT_CLASSNAME);
     return $component;
   },
@@ -314,8 +330,9 @@ export default {
       disabledColor,
       dotWidth,
       enabledColor,
-      gap,
       hoveredColor,
+      filter,
+      position = "left",
       strokeEnabledColor,
       strokeDisabledColor,
       strokeHoveredColor,
@@ -328,17 +345,19 @@ export default {
     { internalDimensions, scales, schema, svg, theme }: IChart,
     data: TData,
   ) {
+    const _data = !filter ? data : data.filter(filter);
     const xGap = schema.xAxisGap || X_AXIS_SPACE;
     const scaleX = scales[value[0]] as any;
     const scaleY = scales[value[1]] as any;
-    const dGap = gap || SCALE_GAP / 2;
     const isScaleTime = schema.values[`${value[0]}`].scale === "time";
-    const colWidth = internalDimensions.width / data.length - dGap;
-    const halfColWidth = colWidth / 2;
+    const colWidth = isScaleTime
+      ? 0
+      : position === "left"
+      ? 0
+      : internalDimensions.width /
+        _data.length /
+        (position === "right" ? 1 : 2);
     const dWidth = dotWidth || colWidth;
-    const halfWidth = isScaleTime
-      ? -dWidth / 2
-      : halfColWidth - dWidth / 2 + dGap / 2;
     const left = internalDimensions.left + xGap;
     const radius = dWidth / 2;
 
@@ -391,7 +410,7 @@ export default {
       )
       .style("--component-stroke-width", strokeWidth || theme.chart.strokeWidth)
       .selectAll("path")
-      .data(data.filter((d) => !!d[value[1]]))
+      .data(_data)
       .enter()
       .append("path")
       .call((g) =>
@@ -403,7 +422,7 @@ export default {
             const yVal = scaleY(d[value[1]]);
             return drawCircle({
               r: radius,
-              x: left + xVal + halfWidth,
+              x: left + xVal + colWidth - dWidth / 2,
               y: yVal,
             });
           })

@@ -33,6 +33,8 @@ export interface IComponent {
   strokeWidth?: number;
   legend?: string;
   gap?: number;
+  filter?: () => any;
+  position?: "left" | "center" | "right";
 }
 
 export interface IAxisComponent extends IComponent {
