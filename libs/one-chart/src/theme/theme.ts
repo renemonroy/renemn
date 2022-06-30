@@ -18,7 +18,7 @@ export default {
     body2: constants.FONT_SIZE.sm,
     caption1: constants.FONT_SIZE.sm,
     caption2: constants.FONT_SIZE.xs,
-    bulletColor: constants.COLORS.primary500,
+    bulletColor: constants.COLORS.primary300,
   },
   card: {
     backgroundColor: constants.COLORS.uiWhite,
@@ -32,17 +32,17 @@ export default {
   },
   space: constants.SPACE, // only required here to override default spaces
   chart: {
-    valueEnabled: constants.COLORS.primary500,
-    valueDisabled: constants.COLORS.primary600,
-    valueHovered: constants.COLORS.primary500,
-    strokeEnabledColor: constants.COLORS.primary800,
-    strokeDisabledColor: constants.COLORS.primary800,
-    strokeHoveredColor: constants.COLORS.primary800,
+    valueEnabled: constants.COLORS.primary300,
+    valueDisabled: constants.COLORS.primary400,
+    valueHovered: constants.COLORS.primary300,
+    strokeEnabledColor: constants.COLORS.primary500,
+    strokeDisabledColor: constants.COLORS.primary500,
+    strokeHoveredColor: constants.COLORS.primary500,
     strokeEnabledOpacity: constants.GRAPH_STROKE_OPACITY,
     strokeDisabledOpacity: constants.GRAPH_STROKE_OPACITY,
     strokeHoveredOpacity: constants.GRAPH_STROKE_OPACITY,
     strokeWidth: constants.GRAPH_STROKE_WIDTH,
-    lineColor: constants.COLORS.ui700,
+    lineColor: constants.COLORS.ui100,
   },
   __COLORS: constants.COLORS,
 } as ITheme;
