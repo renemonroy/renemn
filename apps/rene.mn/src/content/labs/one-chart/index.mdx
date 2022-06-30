@@ -3,8 +3,12 @@ title: 1Chart
 ---
 
 import OneChart, { ChartsProvider } from "@renemn/one-chart";
-import bubblesSchema from "./examples/bubbles.schema";
-import bubblesData from "./examples/bubbles.data";
+import alphabetUsageSchema from "./examples/alphabet_usage.schema";
+import alphabetUsageData from "./examples/alphabet_usage.data";
+import countriesLifeExpectancySchema from "./examples/countries_life_expectancy.schema";
+import countriesLifeExpectancyData from "./examples/countries_life_expectancy.data";
+import usAdSpendingSchema from "./examples/us_ad_spending.schema";
+import usAdSpendingData from "./examples/us_ad_spending.data";
 
 For developers who want to build a group of powerful D3 charts faster, 1Chart is a Proof of Concept project that explores the possibility to simplify the creation of charts while following a consitent and simple pattern.
 
@@ -20,6 +24,24 @@ The idea behind this PoC is to ease the creation of charts following a single pa
 
 <ChartsProvider theme={{ def: { borderRadius: "0.5rem" } }}>
   <div style={{ height: "400px", marginTop: "1rem" }}>
-    <OneChart data={bubblesData} isLoading={false} schema={bubblesSchema} />
+    <OneChart
+      data={countriesLifeExpectancyData}
+      isLoading={false}
+      schema={countriesLifeExpectancySchema}
+    />
+  </div>
+  <div style={{ height: "400px", marginTop: "1rem" }}>
+    <OneChart
+      data={alphabetUsageData}
+      isLoading={false}
+      schema={alphabetUsageSchema}
+    />
+  </div>
+  <div style={{ height: "400px", marginTop: "1rem" }}>
+    <OneChart
+      data={usAdSpendingData}
+      isLoading={false}
+      schema={usAdSpendingSchema}
+    />
   </div>
 </ChartsProvider>
