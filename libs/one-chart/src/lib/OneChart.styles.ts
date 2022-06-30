@@ -93,7 +93,7 @@ export const SChart = styled.svg`
   g.${constants.CHART_LINE} {
     path.${constants.COMPONENT_CLASSNAME} {
       fill: none;
-      stroke-width: 3;
+      stroke-width: 2;
       stroke: var(--component-enabled-color);
     }
   }
