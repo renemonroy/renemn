@@ -15,7 +15,6 @@ const GlobalStyle = createGlobalStyle`
   }
   html, body, #root {
     height: 100%;
-    overflow: hidden;
   }
   html {
     background-color: ${({ theme }: IProps) => theme.def.backgroundColor};
