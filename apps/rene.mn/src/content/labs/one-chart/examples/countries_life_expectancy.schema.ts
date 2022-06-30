@@ -1,9 +1,10 @@
 import { format } from "d3";
 
 export default {
-  id: "bubbles",
-  title: "Life Expectancy",
-  subtitle: "Relationship between GDP (PPP) and population in countries.",
+  id: "countries-life-expectancy",
+  title: "Countries Life Expectancy",
+  subtitle:
+    "Relationship between GDP (PPP) and population in multiple countries.",
   values: {
     lifeExp: {
       scale: "linear",
